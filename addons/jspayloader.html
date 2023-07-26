@@ -1,0 +1,40 @@
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <p style="font-size:2vw;"> Systemless JS Payloader </p>
+    <p style="font-size:1vw;"> Allows for quick execution of JS code! </p>
+    <input id="code" placeholder="Enter code here!" id="code"> 
+    <button onclick="submit()"> Submit </button>
+  </body>
+
+  <style>
+    p {
+      font-family: 'Montserrat', sans-serif;
+    }
+    input {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+
+  <script>
+    function submit() {
+      payload = document.getElementById("code");
+      try {
+        jsPayload = document.createElement('script'); 
+        jsPayload.innerHTML= payload;
+        document.body.appendChild(jsPayload);
+        alert("Payload finished!");
+      } 
+      catch {
+        alert('Payload failed, check dev logs for info');
+      }
+    }
+  </script>
+  
+</html>
